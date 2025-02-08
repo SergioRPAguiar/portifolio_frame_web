@@ -1,0 +1,26 @@
+{% extends "includes/base.html" %} {% block content %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='activities.css') }}"
+/>
+
+<div class="grid-container">
+  <div class="grid-item header">ID</div>
+  <div class="grid-item header">Nome</div>
+  <div class="grid-item header">Sobrenome</div>
+  <div class="grid-item header">Email</div>
+  <div class="grid-item header">Ações</div>
+
+  {% for i in range(1, 998) %}
+  <div class="grid-item">{{ i }}</div>
+  <div class="grid-item">Nome{{ i }}</div>
+  <div class="grid-item">Sobrenome{{ i }}</div>
+  <div class="grid-item">email{{ i }}@exemplo.com</div>
+  <div class="grid-item">
+    <button id="btn-form">Editar</button>
+    <button id="btn-form">Excluir</button>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "includes/base.html" %} {% block content %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='activities.css') }}"
+/>
+
+<main>
+  <div class="canvas-container">
+    <canvas id="myCanvas"></canvas>
+    <div class="controls">Use as setas ← → para mover a imagem</div>
+  </div>
+</main>
+
+<script>
+  const canvas = document.getElementById("myCanvas");
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = 800;
+  canvas.height = 400;
+
+  let posX = canvas.width / 2 - 25;
+  const posY = canvas.height / 2 - 25;
+  const speed = 15;
+  const imgWidth = 50;
+  const imgHeight = 50;
+
+  const img = new Image();
+  img.src = "{{ url_for('static', filename='images/moving_image.png') }}";
+  img.onload = () => ctx.drawImage(img, posX, posY, imgWidth, imgHeight);
+
+  document.addEventListener("keydown", (e) => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    switch (e.key) {
+      case "ArrowLeft":
+        posX = Math.max(0, posX - speed);
+        break;
+      case "ArrowRight":
+        posX = Math.min(canvas.width - imgWidth, posX + speed);
+        break;
+    }
+
+    ctx.drawImage(img, posX, posY, imgWidth, imgHeight);
+  });
+</script>
+
+{% endblock %}

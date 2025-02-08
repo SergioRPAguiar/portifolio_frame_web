@@ -1,0 +1,36 @@
+{% extends "includes/base.html" %} {% block content %}
+
+<main>
+  <div class="form-container">
+    <h2>Formulário Gerado</h2>
+    <form id="dynamicForm">
+      {% for field in fields %}
+      <div class="form-group">
+        <label>{{ field.label }}</label>
+        <input type="{{ field.type }}" name="{{ field.name }}" required />
+      </div>
+      {% endfor %}
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+  </div>
+</main>
+
+<script>
+  document
+    .getElementById("dynamicForm")
+    .addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const formData = Object.fromEntries(new FormData(e.target));
+
+      const response = await fetch("/submit-form", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      alert("Dados recebidos: " + JSON.stringify(result.data));
+    });
+</script>
+
+{% endblock %}

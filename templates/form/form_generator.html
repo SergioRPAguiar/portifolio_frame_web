@@ -1,0 +1,51 @@
+{% extends "includes/base.html" %} {% block content %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/form.css') }}"
+/>
+
+<main>
+  <div class="generator-container">
+    <h2>Configuração do Formulário</h2>
+    <div>
+      <textarea id="jsonInput" placeholder="Cole seu JSON aqui...">
+[
+    {"name": "nome", "type": "text", "label": "Nome Completo"},
+    {"name": "email", "type": "email", "label": "E-mail"},
+    {"name": "idade", "type": "number", "label": "Idade"}
+    ]</textarea
+      >
+    </div>
+    <button onclick="generateForm()" class="btn">Gerar Formulário</button>
+    <div id="formContainer"></div>
+  </div>
+</main>
+
+<script>
+  function generateForm() {
+    try {
+      const fields = JSON.parse(document.getElementById("jsonInput").value);
+
+      fetch("/form-generator", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ fields }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.status === "success") {
+            const container = document.getElementById("formContainer");
+            container.innerHTML = `<a href="${data.template_url}"id="btn-form" 
+                 class="btn" target="_blank">Abrir Formulário</a>`;
+            container.scrollIntoView({ behavior: "smooth" });
+          } else {
+            alert("Erro: " + data.error);
+          }
+        });
+    } catch (error) {
+      alert(`Erro: ${error.message}`);
+    }
+  }
+</script>
+
+{% endblock %}

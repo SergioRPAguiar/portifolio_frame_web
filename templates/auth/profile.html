@@ -1,0 +1,52 @@
+{% extends "includes/base.html" %} {% block content %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/login.css') }}"
+/>
+
+<main>
+  <div class="profile-container">
+    <div class="profile-header">
+      <h2>👤 Perfil do Usuário</h2>
+      <p>Gerencie suas informações de conta</p>
+    </div>
+
+    <div class="profile-data">
+      <div class="data-item">
+        <span class="data-label">Nome Completo:</span>
+        <span class="data-value">{{ user.full_name }}</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">Nome de Usuário:</span>
+        <span class="data-value">{{ user.username }}</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">E-mail:</span>
+        <span class="data-value">{{ user.email }}</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">Função:</span>
+        <span class="data-value">{{ user.role | capitalize }}</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">Conta Criada em:</span>
+        <span class="data-value">{{ user.created_at | datetime_format }}</span>
+      </div>
+    </div>
+
+    <div class="profile-actions">
+      <a href="{{ url_for('logout_route') }}" class="btn btn-block">
+        <i class="fas fa-sign-out-alt"></i> Sair da Conta
+      </a>
+    </div>
+  </div>
+</main>
+
+<script>
+  document.querySelector(".profile-container").style.opacity = 0;
+  setTimeout(() => {
+    document.querySelector(".profile-container").style.opacity = 1;
+  }, 100);
+</script>
+
+{% endblock %}

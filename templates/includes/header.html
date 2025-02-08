@@ -1,0 +1,10 @@
+<header>
+    <h1>{% block title %}Meu Portfólio{% endblock %}</h1>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}" class="nav-link"><i class="fas fa-home"></i> Início</a></li>
+            <li><a href="{{ url_for('lesson_summaries') }}" class="nav-link"><i class="fas fa-book-open"></i> Resumos</a></li>
+            <li><a href="{{ url_for('activities') }}" class="nav-link"><i class="fas fa-tasks"></i> Atividades</a></li>
+        </ul>
+    </nav>
+</header>

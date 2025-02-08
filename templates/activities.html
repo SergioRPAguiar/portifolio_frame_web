@@ -1,0 +1,203 @@
+{% extends "includes/base.html" %}{% block content %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/activities.css') }}"
+/>
+
+<main class="activities-container">
+  <div class="activities-header">
+    <h1 class="page-title">📚 Atividades</h1>
+    <p class="page-subtitle">Explore todas as atividades disponíveis</p>
+  </div>
+
+  <div class="activities-grid">
+    <article class="activity-card">
+      <div class="activity-card-header">
+        <div class="decorative-line"></div>
+        <div class="header-content">
+          <i class="fas fa-arrows-alt card-icon"></i>
+          <h3 class="activity-title">Canvas Interativo</h3>
+        </div>
+      </div>
+
+      <div class="activity-content">
+        <ul class="features-list">
+          <li>Mover imagem com setas do teclado</li>
+          <li>Uso da tag canvas</li>
+          <li>Experiência interativa</li>
+        </ul>
+      </div>
+
+      <div class="card-footer">
+        <a href="/activity1" class="btn-activity">Acessar</a>
+      </div>
+    </article>
+
+    <article class="activity-card">
+      <div class="activity-card-header">
+        <div class="decorative-line"></div>
+        <div class="header-content">
+          <i class="fas fa-camera card-icon"></i>
+          <h3 class="activity-title">Captura de Webcam</h3>
+        </div>
+      </div>
+      <div class="activity-content">
+        <ul class="features-list">
+          <li>Captura de imagem da webcam</li>
+          <li>Exibição da foto na tela</li>
+          <li>Interação em tempo real</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <a href="/activity2" class="btn-activity btn-exam">Acessar</a>
+      </div>
+    </article>
+
+    <article class="activity-card">
+      <div class="activity-card-header">
+        <div class="decorative-line"></div>
+        <div class="header-content">
+          <i class="fas fa-table card-icon"></i>
+          <h3 class="activity-title">Tabela Dinâmica</h3>
+        </div>
+      </div>
+      <div class="activity-content">
+        <ul class="features-list">
+          <li>Exibição de 997 linhas e 5 colunas</li>
+          <li>Implementação sem a tag table</li>
+          <li>Colunas: ID, Nome, Sobrenome, E-mail, Ações</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <a href="/activity3" class="btn-activity btn-exam">Acessar</a>
+      </div>
+    </article>
+
+    <article class="activity-card">
+      <div class="activity-card-header">
+        <div class="decorative-line"></div>
+        <div class="header-content">
+          <i class="fas fa-user-lock card-icon"></i>
+          <h3 class="activity-title">Sistema de Login</h3>
+        </div>
+      </div>
+      <div class="activity-content">
+        <ul class="features-list">
+          <li>Autenticação de usuário com credenciais fictícias</li>
+          <li>Mensagem personalizada (Bom dia, tarde, noite)</li>
+          <li>Limite de 2 tentativas de login</li>
+          <li>Bloqueio após falhas consecutivas</li>
+          <li>Classe Python encapsulando dados do usuário</li>
+          <li>Validação de dados e tratamento de exceções</li>
+          <li>Criação de sessão para autenticação</li>
+          <li>Redirecionamento e mensagens JSON formatadas</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <a href="/login" class="btn-activity btn-exam">Acessar</a>
+      </div>
+    </article>
+
+    <article class="activity-card">
+      <div class="activity-card-header">
+        <div class="decorative-line"></div>
+        <div class="header-content">
+          <i class="fas fa-file-alt card-icon"></i>
+          <h3 class="activity-title">Gerador de Formulários</h3>
+        </div>
+      </div>
+      <div class="activity-content">
+        <ul class="features-list">
+          <li>Geração automática de formulários em HTML</li>
+          <li>Recebimento e processamento de dados via JSON</li>
+          <li>Criação dinâmica de rotas para visualização</li>
+          <li>Conversão dos dados recebidos em lista de strings</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <a href="/form-generator" class="btn-activity btn-exam">Acessar</a>
+      </div>
+    </article>
+
+    <article class="activity-card">
+      <div class="activity-card-header">
+        <div class="decorative-line"></div>
+        <div class="header-content">
+          <i class="fas fa-blog card-icon"></i>
+          <h3 class="activity-title">Mini Blog</h3>
+        </div>
+      </div>
+      <div class="activity-content">
+        <ul class="features-list">
+          <li>Criar postagens de texto</li>
+          <li>Ordenação por data e hora</li>
+          <li>Formulário simples</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <a href="/mini_blog" class="btn-activity btn-exam">Acessar</a>
+      </div>
+    </article>
+
+    <article class="activity-card">
+        <div class="activity-card-header">
+            <div class="decorative-line"></div>
+            <div class="header-content">
+                <i class="fas fa-lock card-icon"></i>
+                <h3 class="activity-title">Autenticação Básica</h3>
+            </div>
+        </div>
+        <div class="activity-content">
+            <ul class="features-list">
+                <li>Autenticação de usuário</li>
+                <li>Limite de tentativas</li>
+                <li>Gerenciamento de sessão</li>
+            </ul>
+        </div>
+        <div class="card-footer">
+            <a href="/basic_auth" class="btn-activity">Acessar</a>
+        </div>
+    </article>
+    <article class="activity-card">
+        <div class="activity-card-header">
+            <div class="decorative-line"></div>
+            <div class="header-content">
+                <i class="fas fa-upload card-icon"></i>
+                <h3 class="activity-title">Upload de Arquivos</h3>
+            </div>
+        </div>
+        <div class="activity-content">
+            <ul class="features-list">
+                <li>Envio de imagens</li>
+                <li>Validação de arquivos</li>
+                <li>Gerenciamento de armazenamento</li>
+            </ul>
+        </div>
+        <div class="card-footer">
+            <a href="/file_upload" class="btn-activity">Acessar</a>
+        </div>
+    </article>
+        <article class="activity-card exam-card">
+            <div class="activity-card-header">
+                <div class="decorative-line"></div>
+                <div class="header-content">
+                    <i class="fas fa-clipboard-check card-icon"></i>
+                    <h3 class="activity-title">Sistema de Notas Completo (Prova)</h3>
+                </div>
+            </div>
+            <div class="activity-content">
+                <ul class="features-list">
+                    <li>CRUD completo de notas</li>
+                    <li>Ordenação automática por nota</li>
+                    <li>Validação de dados</li>
+                    <li>Sistema de feedback visual</li>
+                    <li>Interface responsiva</li>
+                    <li>Gestão acadêmica</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <a href="/grades" class="btn-activity btn-exam">Acessar</a>
+            </div>
+        </article>
+</main>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "includes/base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    
+    <main>
+        <div class="login-container">
+            <div class="login-header">
+                <h2>🔐 Autenticação</h2>
+                <p>Insira suas credenciais para acessar</p>
+            </div>
+
+            <div id="response" class="response-message"></div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <input type="text" id="user" placeholder="Usuário" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Senha" required>
+                </div>
+                <button type="submit" class="btn btn-block">Entrar</button>
+            </form>
+
+            <div class="login-footer">
+                <p>Tentativas restantes: <span id="attempts">2</span></p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            document.getElementById('response').style.display = 'none';
+            
+            const response = await fetch('/login', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    user: document.getElementById('user').value.trim(),
+                    password: document.getElementById('password').value.trim()
+                })
+            });
+            
+            if(response.redirected) window.location.reload();
+            
+            const result = await response.json();
+            const responseDiv = document.getElementById('response');
+            
+            responseDiv.textContent = result.message;
+            responseDiv.className = `response-message ${result.status}`;
+            responseDiv.style.display = 'block';
+        
+            if(result.status === 'success') {
+                setTimeout(() => {
+                    window.location.href = '/profile';
+                }, 2000);
+            }
+            else {
+                const attemptsSpan = document.getElementById('attempts');
+                attemptsSpan.textContent = result.attempts_remaining ?? 2;
+                
+                if(result.attempts_remaining === 0) {
+                    document.getElementById('loginForm').remove();
+                    attemptsSpan.parentElement.remove();
+                }
+            }
+        });
+    </script>
+    
+{% endblock %}

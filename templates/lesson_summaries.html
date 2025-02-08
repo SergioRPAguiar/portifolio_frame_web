@@ -1,0 +1,31 @@
+{% extends "includes/base.html" %} {% block content %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/lesson_summaries.css') }}"
+/>
+
+<main class="lesson-summary-container">
+    <div class="lesson-header">
+        <h1 class="page-title">📖 Resumos das Aulas</h1>
+        <p class="page-subtitle">Conteúdo completo organizado para fácil consulta</p>
+    </div>
+
+    <div class="lesson-grid">
+        {% for summary in summaries %}
+        <article class="lesson-card">
+            <div class="lesson-card-header">
+                <div class="decorative-line"></div>
+                <div class="header-content">
+                    <i class="fas fa-book-open card-icon"></i>
+                    <h3 class="lesson-title">{{ summary.title }}</h3>
+                </div>
+            </div>
+            
+            <div class="lesson-content">
+                {{ summary.content|safe }}
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</main>
+{% endblock %}

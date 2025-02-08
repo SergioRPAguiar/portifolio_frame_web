@@ -1,0 +1,12 @@
+#btn-form {
+  padding: 8px 15px;
+  font-size: 0.7rem;
+  display: inline-block;
+  width: auto;
+  margin-top: 15px;
+  background: #f52020;
+}
+
+#btn-form:hover {
+  background: #cb1111;
+}

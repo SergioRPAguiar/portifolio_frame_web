@@ -1,0 +1,63 @@
+{% extends "includes/base.html" %} {% block content %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/grades.css') }}"
+/>
+
+<section class="container">
+  <div class="section-header">
+    <h1>📊 Controle de Notas</h1>
+  </div>
+
+  {% with messages = get_flashed_messages(with_categories=true) %} {% if
+  messages %}
+  <div class="flash-messages">
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %}
+  </div>
+  {% endif %} {% endwith %}
+
+  <div class="gs-table">
+    <div class="gs-header">ID</div>
+    <div class="gs-header">Aluno</div>
+    <div class="gs-header">Disciplina</div>
+    <div class="gs-header">Nota</div>
+    <div class="gs-header">Ações</div>
+
+    {% for grade in grades %}
+    <div class="gs-row">
+      <div data-label="ID">#{{ grade.id }}</div>
+      <div data-label="Aluno">{{ grade.student }}</div>
+      <div data-label="Disciplina">{{ grade.subject }}</div>
+      <div data-label="Nota" class="gs-value">{{ grade.grade }}</div>
+      <div data-label="Ações" class="gs-actions">
+        <div data-label="Ações" class="gs-actions">
+          <a
+            href="{{ url_for('grades_edit', id=grade.id) }}"
+            class="gs-btn gs-btn-warning"
+          >
+            <i class="fas fa-edit"></i> Editar
+          </a>
+          <a
+            href="{{ url_for('grades_delete', id=grade.id) }}"
+            class="gs-btn gs-btn-danger"
+          >
+            <i class="fas fa-trash"></i> Excluir
+          </a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <div class="gs-new-btn-container">
+      <a
+        href="{{ url_for('grades_add') }}"
+        class="btn btn-primary gs-btn gs-new-btn"
+      >
+        <i class="fas fa-plus"></i> Nova Nota
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

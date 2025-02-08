@@ -1,0 +1,27 @@
+{% extends "includes/base.html" %} {% block content %}
+<main class="container">
+  <section class="upload-section">
+    <h2 class="section-title">📤 Upload de Arquivo</h2>
+
+    <form method="POST" enctype="multipart/form-data" class="upload-form">
+      <div class="form-group">
+        <input type="file" name="file" accept="image/*" required />
+      </div>
+      <button type="submit" id="btn-send" class="btn btn-primary">Enviar</button>
+    </form>
+
+    {% if success and file %}
+    <div class="upload-success">
+      <p>Arquivo enviado com sucesso!</p>
+      <p>Salvo em: <code>{{ file.path }}</code></p>
+      <img
+        src="{{ url_for('uploaded_file', filename=file.filename) }}"
+        alt="Imagem enviada"
+        class="uploaded-image"
+      />
+    </div>
+    {% endif %}
+  </section>
+</main>
+{% endblock %}
+

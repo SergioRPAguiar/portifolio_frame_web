@@ -1,0 +1,179 @@
+ul {
+  list-style: none;
+}
+
+ol {
+  list-style: none;
+  margin-left: 25px;
+}
+
+.lesson-summary-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.lesson-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0.8rem 0;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border-radius: 15px;
+  color: white;
+}
+
+.page-title {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.lesson-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.lesson-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.lesson-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.lesson-card-header {
+  padding: 1.5rem;
+  background: #f8f9fa;
+  position: relative;
+}
+
+.decorative-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-icon {
+  font-size: 1.8rem;
+  color: #6a11cb;
+}
+
+.lesson-title {
+  color: #2c3e50;
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.lesson-content {
+  padding: 1.5rem;
+  color: #34495e;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.lesson-section {
+  margin-bottom: 2rem;
+}
+
+.lesson-section:last-child {
+  margin-bottom: 1rem;
+}
+
+.lesson-section h3 {
+  color: #2575fc;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #eee;
+}
+
+.evaluation-grid {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.evaluation-item {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #6a11cb;
+}
+
+.evaluation-item h4 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.requirements-box {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  margin-top: 1rem;
+}
+
+.lesson-content ul {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.lesson-content li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.lesson-content li::before {
+  content: "•";
+  color: #6a11cb;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.code-block {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 1rem;
+  border-radius: 6px;
+  font-family: "Fira Code", monospace;
+  font-size: 0.9rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  .lesson-summary-container {
+    padding: 0 0.5rem;
+  }
+
+  .lesson-card {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .lesson-header {
+    border-radius: 0;
+  }
+}

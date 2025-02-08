@@ -1,0 +1,27 @@
+{% extends "includes/base.html" %} {% block content %}
+<main class="container">
+  <section class="blog-section">
+    <h2 class="section-title">📝 Mini Blog</h2>
+
+    <form method="POST" class="blog-form">
+      <div class="form-group">
+        <textarea
+          name="content"
+          required
+          placeholder="Escreva seu post aqui..."
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Publicar</button>
+    </form>
+
+    <div class="posts-container">
+      {% for post in posts %}
+      <article class="post-card">
+        <time class="post-date">{{ post.timestamp|datetime_format }}</time>
+        <p class="post-content">{{ post.content }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+{% endblock %}
