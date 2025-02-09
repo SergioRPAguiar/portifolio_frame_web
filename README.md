@@ -44,7 +44,7 @@ Um sistema completo para gestão de atividades acadêmicas, resumos de aulas e a
        .\.venv\Scripts\activate
     
     #### Linux/MacOS:
-       source venv/bin/activate
+       source .venv/bin/activate
 
 5. **Instalar dependências**
     ```bash
