@@ -1,4 +1,4 @@
-# Sistema de Gestão Acadêmica com Flask
+# Portfólio de Frameworks Web com Flask
 
 ![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
 ![Flask](https://img.shields.io/badge/Flask-2.0%2B-green)
