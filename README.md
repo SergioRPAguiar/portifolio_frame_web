@@ -41,7 +41,7 @@ Um sistema completo para gestão de atividades acadêmicas, resumos de aulas e a
 
 3. **Ativar ambiente virtual**
     #### Windows:
-       .\venv\Scripts\activate
+       .\.venv\Scripts\activate
     
     #### Linux/MacOS:
        source venv/bin/activate
