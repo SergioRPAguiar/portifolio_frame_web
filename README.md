@@ -52,13 +52,13 @@ Um sistema completo para gestão de atividades acadêmicas, resumos de aulas e a
     
 ### Configuração
 
-1. **Criar arquivo de configuração (.env)**
+1. **Criar arquivo de configuração na raiz do projeto (.env)**
    ```env
    SECRET_KEY=sua_chave_secreta_aqui
    DEBUG=True
    UPLOAD_FOLDER=uploads
 
-2. **Criar diretório para uploads**
+2. **Criar diretório para uploads na raiz do projeto**
     ```bash
     mkdir uploads
 
