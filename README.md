@@ -58,7 +58,7 @@ Um sistema completo para gestão de atividades acadêmicas, resumos de aulas e a
    DEBUG=True
    UPLOAD_FOLDER=uploads
 
-2. **Criar diretório para uploads na raiz do projeto**
+2. **Criar diretório para uploads**
     ```bash
     mkdir uploads
 
