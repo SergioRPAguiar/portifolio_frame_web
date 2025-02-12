@@ -34,7 +34,7 @@ Um sistema completo para gestão de atividades acadêmicas, resumos de aulas e a
    #### Linux:
     - Pressionar as teclas Ctrl + Alt + T ao mesmo tempo
 2. **Clonar o repositório**
-   - Já no terminal siga os proximos passos colando os códigos a seguir
+   - Já no terminal, siga os próximos passos, copiando os códigos, colando no terminal e pressionando Enter em cada passo
      
     ```bash
     git clone https://github.com/SergioRPAguiar/portifolio_frame_web
