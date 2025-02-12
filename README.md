@@ -32,7 +32,7 @@ Um sistema completo para gestão de atividades acadêmicas, resumos de aulas e a
     git clone https://github.com/SergioRPAguiar/portifolio_frame_web
     ```
    ```bash
-   cd seu-projeto
+   cd portifolio_frame_web
     
 
 2. **Criar ambiente virtual (recomendado)**
