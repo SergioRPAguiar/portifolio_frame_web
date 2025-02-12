@@ -61,12 +61,18 @@ Um sistema completo para gestão de atividades acadêmicas, resumos de aulas e a
 ### Configuração
 
 1. **Criar arquivo de configuração (.env)**
+   #### Windows:
+       echo SECRET_KEY=sua_chave_secreta_aqui > .env
+       echo DEBUG=True >> .env
+       echo UPLOAD_FOLDER=uploads >> .env
+   
+   #### Linux:
    ```bash
    echo "SECRET_KEY=sua_chave_secreta_aqui" > .env
    echo "DEBUG=True" >> .env
    echo "UPLOAD_FOLDER=uploads" >> .env
 
-2. **Criar diretório para uploads**
+3. **Criar diretório para uploads**
     ```bash
     mkdir uploads
 
