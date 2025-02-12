@@ -36,15 +36,20 @@ Um sistema completo para gestão de atividades acadêmicas, resumos de aulas e a
     
 
 2. **Criar ambiente virtual (recomendado)**
-    ```bash
-    python -m venv .venv
+   
 
 3. **Ativar ambiente virtual**
     #### Windows:
-       .\.venv\Scripts\activate
+       python -m venv .venv
+    ```
+    .\.venv\Scripts\activate
+    ```
     
     #### Linux/MacOS:
-       source .venv/bin/activate
+       python3 -m venv .venv
+   ```
+   source .venv/bin/activate
+   ```
 
 5. **Instalar dependências**
     ```bash
