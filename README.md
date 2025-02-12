@@ -32,13 +32,8 @@ Um sistema completo para gestão de atividades acadêmicas, resumos de aulas e a
     git clone https://github.com/SergioRPAguiar/portifolio_frame_web
     ```
    ```bash
-   cd portifolio_frame_web
-    
-
-2. **Criar ambiente virtual (recomendado)**
-   
-
-3. **Ativar ambiente virtual**
+   cd portifolio_frame_web 
+2. **Criar e Ativar ambiente virtual**
     #### Windows:
        python -m venv .venv
     ```
@@ -51,7 +46,7 @@ Um sistema completo para gestão de atividades acadêmicas, resumos de aulas e a
    source .venv/bin/activate
    ```
 
-5. **Instalar dependências**
+3. **Instalar dependências**
     ```bash
     pip install -r requirements.txt
     
