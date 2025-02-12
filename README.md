@@ -24,29 +24,37 @@ Um sistema completo para gestão de atividades acadêmicas, resumos de aulas e a
 - Python 3.11 ou superior
 - pip (Gerenciador de pacotes Python)
 - Navegador moderno (Chrome, Firefox, Edge)
+- Git
 
 ### Instalação
-
-1. **Clonar o repositório**
+1. **Iniciar prompt de comando**
+   #### Windows:
+    - Pressionar as teclas Windows + R ao mesmo tempo
+    - Digitar "cmd" na caixa Executar e apertar enter no teclado
+   #### Linux:
+    - Pressionar as teclas Ctrl + Alt + T ao mesmo tempo
+2. **Clonar o repositório**
+   - Já no terminal siga os proximos passos colando os códigos a seguir
+     
     ```bash
     git clone https://github.com/SergioRPAguiar/portifolio_frame_web
     ```
    ```bash
    cd portifolio_frame_web 
-2. **Criar e Ativar ambiente virtual**
+4. **Criar e Ativar ambiente virtual**
     #### Windows:
        python -m venv .venv
     ```
     .\.venv\Scripts\activate
     ```
     
-    #### Linux/MacOS:
+    #### Linux:
        python3 -m venv .venv
    ```
    source .venv/bin/activate
    ```
 
-3. **Instalar dependências**
+5. **Instalar dependências**
     ```bash
     pip install -r requirements.txt
     
@@ -69,7 +77,7 @@ Um sistema completo para gestão de atividades acadêmicas, resumos de aulas e a
 
 ## 🖥 Como Usar
 1. **Página Inicial**
-  - Acesse http://localhost:5000
+  - Acesse http://localhost:5000 no seu navegador
   - Navegação principal através do menu
 
 2. **Rotas Principais**
