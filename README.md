@@ -30,7 +30,7 @@ Um sistema completo para gestão de atividades acadêmicas, resumos de aulas e a
 1. **Iniciar prompt de comando**
    #### Windows:
     - Pressionar as teclas Windows + R ao mesmo tempo
-    - Digitar "cmd" na caixa Executar e apertar enter no teclado
+    - Digitar "cmd" na caixa Executar e aperte Enter no teclado
    #### Linux:
     - Pressionar as teclas Ctrl + Alt + T ao mesmo tempo
 2. **Clonar o repositório**
